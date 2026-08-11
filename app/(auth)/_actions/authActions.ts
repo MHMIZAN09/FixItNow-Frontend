@@ -70,7 +70,7 @@ export const loginAction = async (
     const decodedToken = jwt.decode(result.data.accessToken) as JwtPayload;
 
     if (decodedToken.role === "CUSTOMER") {
-      redirect("/customer-dashboard");
+      redirect("/dashboard");
     }
 
     if (decodedToken.role === "ADMIN") {
