@@ -1,10 +1,9 @@
 "use server";
-
 const API_URL = process.env.BACKEND_API_URL;
 
-export const getTechniciansAction = async () => {
+export const getServicesAction = async () => {
   try {
-    const response = await fetch(`${API_URL}/api/technicians`, {
+    const response = await fetch(`${API_URL}/api/services`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -13,20 +12,20 @@ export const getTechniciansAction = async () => {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to fetch technicians");
+      throw new Error("Failed to fetch services");
     }
 
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error fetching technicians:", error);
+    console.error("Error fetching services:", error);
     throw error;
   }
 };
 
-export const getTechnicianByIdAction = async (id: string) => {
+export const getServicesByIdAction = async (id: string) => {
   try {
-    const response = await fetch(`${API_URL}/api/technicians/${id}`, {
+    const response = await fetch(`${API_URL}/api/services/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -35,13 +34,13 @@ export const getTechnicianByIdAction = async (id: string) => {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to fetch technician");
+      throw new Error(`Failed to fetch service with ID: ${id}`);
     }
 
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error fetching technician:", error);
+    console.error(`Error fetching service with ID ${id}:`, error);
     throw error;
   }
 };
