@@ -22,7 +22,7 @@ export const getAllUsersAction = async () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `accessToken ${accessToken}`,
+        Authorization: `accessToken=${accessToken}`,
       },
       next: { revalidate: 30 },
     });
@@ -38,3 +38,30 @@ export const getAllUsersAction = async () => {
     throw error;
   }
 };
+
+export async function getUserProfile() {
+  const cookieStore = await cookies();
+
+  const accessToken = cookieStore.get("accessToken")?.value;
+
+  if (!accessToken) {
+    return {
+      success: false,
+      statusCode: 401,
+      message: "User is not authenticated. Access token is missing.",
+    };
+  }
+
+  const res = await fetch(`${API_URL}/api/users/profile`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      cookie: `accessToken=${accessToken}`,
+    },
+    cache: "no-store",
+  });
+
+  const result = await res.json();
+  // console.log('result', result);
+  return result;
+}

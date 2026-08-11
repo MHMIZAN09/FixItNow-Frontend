@@ -46,6 +46,16 @@ export const sidebarConfig = {
       icon: CreditCard,
     },
     {
+      title: "Reviews",
+      url: "/admin-dashboard/reviews",
+      icon: Star,
+    },
+    {
+      title: "My Profile",
+      url: "/admin-dashboard/profile",
+      icon: UserRound,
+    },
+    {
       title: "Settings",
       url: "/admin-dashboard/settings",
       icon: Settings,
@@ -93,7 +103,7 @@ export const sidebarConfig = {
   CUSTOMER: [
     {
       title: "Overview",
-      url: "/customer-dashboard",
+      url: "/dashboard",
       icon: LayoutDashboard,
     },
     {
@@ -103,27 +113,27 @@ export const sidebarConfig = {
     },
     {
       title: "My Bookings",
-      url: "/customer-dashboard/bookings",
+      url: "/dashboard/bookings",
       icon: CalendarCheck,
     },
     {
       title: "Payments",
-      url: "/customer-dashboard/payments",
+      url: "/dashboard/payments",
       icon: CreditCard,
     },
     {
       title: "My Reviews",
-      url: "/customer-dashboard/reviews",
+      url: "/dashboard/reviews",
       icon: Star,
     },
     {
       title: "Profile",
-      url: "/customer-dashboard/profile",
+      url: "/dashboard/profile",
       icon: UserRound,
     },
     {
       title: "Settings",
-      url: "/customer-dashboard/settings",
+      url: "/dashboard/settings",
       icon: Settings,
     },
   ],

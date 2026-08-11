@@ -1,5 +1,5 @@
 import { getUserProfile } from "../../_actions/users.actions";
-import AdminProfileSection from "../../_components/profile/admin-profile-section";
+import CustomerProfileSection from "../../_components/profile/customer-profile-section";
 import ProfileAccount from "../../_components/profile/profile-account";
 import ProfileContact from "../../_components/profile/profile-contact";
 import ProfileHeader from "../../_components/profile/profile-header";
@@ -69,7 +69,7 @@ const ProfilePage = async () => {
         <ProfileContact user={user} />
       </div>
 
-      {user.role === "ADMIN" && <AdminProfileSection user={user} />}
+      {user.role === "CUSTOMER" && <CustomerProfileSection user={user} />}
 
       {/* Account Information */}
       <ProfileAccount user={user} />
