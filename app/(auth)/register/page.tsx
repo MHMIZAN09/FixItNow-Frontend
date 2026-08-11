@@ -1,5 +1,9 @@
-const RegisterPage = () => {
-  return <div>RegisterPage</div>;
-};
+import RegisterForm from "../_components/register-form";
 
-export default RegisterPage;
+export default function RegisterPage() {
+  return (
+    <main className="flex min-h-screen items-center justify-center bg-muted/30 px-4 py-8">
+      <RegisterForm />
+    </main>
+  );
+}
